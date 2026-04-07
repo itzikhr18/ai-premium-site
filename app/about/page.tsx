@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { HeroSection } from "../components/HeroSection";
 import { FadeUp, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
+import { About3 } from "@/components/ui/about-3";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const values = [
   { icon: "🎯", title: "ממוקד תוצאות", desc: "כל פעולה נמדדת ומכוונת ליצירת ערך עסקי אמיתי" },
@@ -19,27 +21,44 @@ export default function About() {
         subtitle="מי אני ולמה כדאי לכם להקשיב לי"
       />
 
-      {/* About Content */}
-      <section className="py-24">
-        <div className="w-[90%] max-w-3xl mx-auto">
-          <FadeUp>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-              <p>
-                אני איציק, יזם ומומחה לבינה מלאכותית ואוטומציות עסקיות. לאורך השנים חיברתי
-                בין ביזנס לטכנולוגיה, כדי לעזור לעסקים קטנים ובינוניים בישראל לצמוח.
-              </p>
-              <p>
-                אני מאמין שבינה מלאכותית היא כלי עבודה ולא צעצוע. זו הדרך לייעל תהליכים,
-                לחסוך במשאבים ולהגדיל הכנסות בצורה ברת־קיימא.
-              </p>
-              <p>
-                כשאני עובד עם עסקים, אני מתמקד בתוצאות. אין הבטחות שווא או באזזים. רק
-                פתרונות פרקטיים שמייצרים ROI אמיתי.
-              </p>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
+      {/* About Content - About3 Component */}
+      <About3
+        title="הסיפור שלי"
+        description="אני איציק, יזם ומומחה לבינה מלאכותית ואוטומציות עסקיות. לאורך השנים חיברתי בין ביזנס לטכנולוגיה, כדי לעזור לעסקים קטנים ובינוניים בישראל לצמוח."
+        mainImage={{
+          src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+          alt: "צוות עובד עם טכנולוגיה",
+        }}
+        secondaryImage={{
+          src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+          alt: "ניתוח נתונים",
+        }}
+        breakout={{
+          src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=100&h=48&fit=crop",
+          alt: "AI",
+          title: "AI שעובד בשביל העסק שלך",
+          description: "אני מאמין שבינה מלאכותית היא כלי עבודה ולא צעצוע. רק פתרונות פרקטיים שמייצרים ROI אמיתי.",
+          buttonText: "צור קשר",
+          buttonUrl: "/contact",
+        }}
+        companiesTitle="כלים ופלטפורמות שאני עובד איתם"
+        companies={[
+          { src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-1.svg", alt: "OpenAI" },
+          { src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-2.svg", alt: "Make" },
+          { src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-3.svg", alt: "Zapier" },
+          { src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-4.svg", alt: "n8n" },
+          { src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-5.svg", alt: "Anthropic" },
+          { src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-6.svg", alt: "Vercel" },
+        ]}
+        achievementsTitle="הישגים במספרים"
+        achievementsDescription="תוצאות אמיתיות מלקוחות אמיתיים - מספרים שמדברים בעד עצמם."
+        achievements={[
+          { label: "עסקים שליוויתי", value: "50+" },
+          { label: "אוטומציות שנבנו", value: "200+" },
+          { label: "שביעות רצון", value: "99%" },
+          { label: "חיסכון ממוצע בזמן", value: "70%" },
+        ]}
+      />
 
       {/* Values */}
       <section className="py-24 bg-[var(--color-surface)]">
@@ -85,12 +104,10 @@ export default function About() {
               רוצה לשמוע איך AI יכול לעזור לעסק שלך?
             </h2>
             <p className="text-white/60 text-lg mb-8">שיחת היכרות קצרה ללא התחייבות</p>
-            <a
-              href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות"
-              className="group relative inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full text-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative">שיחת היכרות בוואטסאפ</span>
+            <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות">
+              <LiquidButton size="xxl" className="text-white font-bold text-lg">
+                שיחת היכרות בוואטסאפ
+              </LiquidButton>
             </a>
           </FadeUp>
         </div>
