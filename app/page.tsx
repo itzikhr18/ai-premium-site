@@ -38,8 +38,9 @@ export default function Home() {
         badge="יועץ AI ואוטומציות עסקיות"
         title="אני עוזר לעסקים להפוך AI לכלי שמכניס כסף וחוסך זמן"
         subtitle="פתרונות AI פרקטיים שמביאים תוצאות אמיתיות לעסקים קטנים ובינוניים"
+        splineScene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
       >
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           <a
             href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות"
             className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
