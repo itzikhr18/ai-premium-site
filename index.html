@@ -10,86 +10,204 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">AI</span>
+      איציק
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">ראשי</a>
+      <a href="about.html">אודות</a>
+      <a href="services.html">שירותים</a>
+      <a href="cases.html">תוצאות</a>
+      <a href="contact.html">צור קשר</a>
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="nav-cta">שיחת היכרות</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
 <header class="hero">
   <div class="container">
+    <div class="hero-badge">יועץ AI ואוטומציות עסקיות</div>
     <h1>אני עוזר לעסקים להפוך AI לכלי שמכניס כסף וחוסך זמן</h1>
-    <p class="subtitle">פתרונות AI פרקטיים שמביאים תוצאות אמיתיות</p>
-    <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="cta">שיחת היכרות בוואטסאפ</a>
+    <p class="subtitle">פתרונות AI פרקטיים שמביאים תוצאות אמיתיות לעסקים קטנים ובינוניים</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="cta">שיחת היכרות בוואטסאפ</a>
+      <a href="services.html" class="cta cta-secondary">לשירותים שלי</a>
+    </div>
   </div>
 </header>
 
-<section class="problem">
+<!-- Problem -->
+<section class="problem fade-up">
   <div class="container">
-    <h2>למה AI לא עובד לרוב העסקים?</h2>
-    <ul>
-      <li>חוסר בהבנת ROI ויעדים עסקיים</li>
-      <li>כלים מורכבים ומסובכים מדי</li>
-      <li>יישום לא ממוקד שמבזבז זמן ומשאבים</li>
-    </ul>
-  </div>
-</section>
-
-<section class="solution">
-  <div class="container">
-    <h2>איך אני מיישם AI בפועל</h2>
-    <ul>
-      <li>ניתוח צרכים והזדמנויות</li>
-      <li>בניית אוטומציות יעילות</li>
-      <li>מדידה ושיפור מתמיד</li>
-    </ul>
-  </div>
-</section>
-
-<section class="services-overview">
-  <div class="container">
-    <h2>שירותים</h2>
-    <div class="services-grid">
-      <div class="service-item">
-        <h3>ייעוץ ואבחון AI</h3>
-        <p>נבין יחד איפה AI יכול לייצר יותר ערך בעסק שלך.</p>
+    <div class="section-label">הבעיה</div>
+    <h2>למה AI <span class="highlight">לא עובד</span> לרוב העסקים?</h2>
+    <p class="section-desc">רוב העסקים שמנסים ליישם AI נתקלים באותן בעיות שוב ושוב</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">&#x1F4C9;</div>
+        <h3>חוסר הבנת ROI</h3>
+        <p>השקעה בכלי AI ללא יעדים עסקיים ברורים ומדידים</p>
       </div>
-      <div class="service-item">
-        <h3>אוטומציות לעסקים</h3>
-        <p>נבנה תהליכים אוטומטיים שחוסכים זמן וכסף.</p>
+      <div class="problem-card">
+        <div class="problem-icon">&#x1F9E9;</div>
+        <h3>כלים מורכבים מדי</h3>
+        <p>טכנולוגיה מסובכת שדורשת ידע טכני שאין לעסקים</p>
       </div>
-      <div class="service-item">
-        <h3>סוכני AI וכלים פנימיים</h3>
-        <p>נייצר בוטים חכמים שמטפלים בפניות ושירות.</p>
-      </div>
-      <div class="service-item">
-        <h3>ליווי והטמעה</h3>
-        <p>נלווה אותך לאורך כל הדרך עד להצלחה.</p>
+      <div class="problem-card">
+        <div class="problem-icon">&#x23F3;</div>
+        <h3>יישום לא ממוקד</h3>
+        <p>בזבוז זמן ומשאבים על פתרונות שלא מתאימים</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cases-overview">
+<!-- Solution / Process -->
+<section class="solution fade-up">
   <div class="container">
-    <h2>תוצאות והוכחות</h2>
-    <ul class="stats">
-      <li><strong>3X</strong> הגדלת המכירות בעסק קטן תוך חודש</li>
-      <li><strong>70%</strong> חיסכון בזמן עבודה ידנית</li>
-      <li><strong>90%</strong> ירידה בשגיאות תהליכים</li>
-    </ul>
+    <div class="section-label">התהליך</div>
+    <h2>איך אני <span class="highlight">מיישם AI</span> בפועל</h2>
+    <p class="section-desc">שיטה מוכחת בשלושה שלבים פשוטים</p>
+    <div class="process-steps">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>ניתוח צרכים והזדמנויות</h3>
+        <p>מזהים את נקודות הכאב ואת ההזדמנויות שבהן AI יכול לייצר את ההשפעה הגדולה ביותר</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>בניית אוטומציות יעילות</h3>
+        <p>מפתחים פתרונות מותאמים אישית שעובדים בצורה אוטומטית ומייעלים תהליכים</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>מדידה ושיפור מתמיד</h3>
+        <p>עוקבים אחרי התוצאות, מודדים ROI ומשפרים בצורה רציפה</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="final-cta">
+<!-- Services -->
+<section class="services-overview fade-up">
+  <div class="container">
+    <div class="section-label">שירותים</div>
+    <h2>מה אני <span class="highlight">מציע</span></h2>
+    <p class="section-desc">פתרונות מקצה לקצה להטמעת AI בעסק שלך</p>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">&#x1F50D;</div>
+        <h3>ייעוץ ואבחון AI</h3>
+        <p>נבין יחד איפה AI יכול לייצר יותר ערך בעסק שלך ונבנה תוכנית פעולה.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#x2699;&#xFE0F;</div>
+        <h3>אוטומציות לעסקים</h3>
+        <p>נבנה תהליכים אוטומטיים שחוסכים זמן וכסף ומפחיתים טעויות.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#x1F916;</div>
+        <h3>סוכני AI וכלים פנימיים</h3>
+        <p>נייצר בוטים חכמים שמטפלים בפניות, שירות לקוחות ועוד.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#x1F91D;</div>
+        <h3>ליווי והטמעה</h3>
+        <p>נלווה אותך לאורך כל הדרך עד להצלחה עם תמיכה מתמשכת.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="cases-overview fade-up">
+  <div class="container">
+    <div class="section-label" style="color: var(--accent-light);">תוצאות</div>
+    <h2>תוצאות <span class="highlight">אמיתיות</span> מהשטח</h2>
+    <p class="section-desc" style="color: rgba(255,255,255,0.6);">מספרים שמדברים בעד עצמם</p>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">3X</div>
+        <p>הגדלת המכירות בעסק קטן תוך חודש</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">70%</div>
+        <p>חיסכון בזמן עבודה ידנית</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">90%</div>
+        <p>ירידה בשגיאות תהליכים</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta fade-up">
   <div class="container">
     <h2>בואו נתחיל להכניס AI לעסק שלכם</h2>
     <p>שיחת אסטרטגיה של 30 דקות ללא התחייבות</p>
-    <a href="https://wa.me/972527237064?text=שלום, אשמח לשוחח על AI לעסק שלי" class="cta">לתיאום שיחת אסטרטגיה</a>
+    <div class="cta-buttons">
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשוחח על AI לעסק שלי" class="cta">לתיאום שיחת אסטרטגיה</a>
+    </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
   <div class="container">
-    <p>&copy; <span id="year"></span> איציק - יועץ AI ואוטומציות עסקיות</p>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> איציק - יועץ AI ואוטומציות עסקיות</p>
+      <div class="footer-links">
+        <a href="about.html">אודות</a>
+        <a href="services.html">שירותים</a>
+        <a href="cases.html">תוצאות</a>
+        <a href="contact.html">צור קשר</a>
+      </div>
+    </div>
   </div>
 </footer>
+
 <script>
+// Year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile toggle
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

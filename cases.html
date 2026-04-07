@@ -10,38 +10,93 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar scrolled">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">AI</span>
+      איציק
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">ראשי</a>
+      <a href="about.html">אודות</a>
+      <a href="services.html">שירותים</a>
+      <a href="cases.html" class="active">תוצאות</a>
+      <a href="contact.html">צור קשר</a>
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="nav-cta">שיחת היכרות</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
 <header class="hero">
-<div class="container">
-<h1>קייסים ותוצאות</h1>
-<p class="subtitle">הוכחות מהשטח</p>
-<a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="cta">שיחת היכרות בוואטסאפ</a>
-</div>
+  <div class="container">
+    <div class="hero-badge">הוכחות מהשטח</div>
+    <h1>קייסים ותוצאות</h1>
+    <p class="subtitle">סיפורי הצלחה אמיתיים מעסקים כמו שלך</p>
+  </div>
 </header>
 
-<section class="cases-list">
-<div class="container">
-<div class="case-item">
-<h2>הגדלת מכירות פי 3</h2>
-<p>באמצעות שילוב אוטומציה ומודלי AI מותאמים, עסק קטן בתחום המסעדנות הגדיל את המכירות פי 3 תוך חודש אחד בלבד.</p>
-</div>
-<div class="case-item">
-<h2>חיסכון של 70% בזמן</h2>
-<p>עסק שירותים הצליח לחסוך 70% מזמן העבודה הידנית באמצעות תהליכי אוטומציה שמצמצמים טעויות ומייעלים תהליכים.</p>
-</div>
-<div class="case-item">
-<h2>ייעול תהליכים והפחתת טעויות</h2>
-<p>חברת מסחר מקוון יצרה בוט AI פנימי ששולט בפניות שירות לקוחות, והורידה ב־90% את מספר השגיאות בתהליכים.</p>
-</div>
-</div>
+<!-- Cases -->
+<section class="cases-list fade-up" style="padding: 80px 20px;">
+  <div class="container">
+    <div class="case-item">
+      <h2>הגדלת מכירות פי 3</h2>
+      <p>באמצעות שילוב אוטומציה ומודלי AI מותאמים, עסק קטן בתחום המסעדנות הגדיל את המכירות פי 3 תוך חודש אחד בלבד.</p>
+    </div>
+    <div class="case-item">
+      <h2>חיסכון של 70% בזמן</h2>
+      <p>עסק שירותים הצליח לחסוך 70% מזמן העבודה הידנית באמצעות תהליכי אוטומציה שמצמצמים טעויות ומייעלים תהליכים.</p>
+    </div>
+    <div class="case-item">
+      <h2>ייעול תהליכים והפחתת טעויות</h2>
+      <p>חברת מסחר מקוון יצרה בוט AI פנימי ששולט בפניות שירות לקוחות, והורידה ב־90% את מספר השגיאות בתהליכים.</p>
+    </div>
+  </div>
 </section>
 
+<!-- CTA -->
+<section class="final-cta fade-up">
+  <div class="container">
+    <h2>רוצה תוצאות כאלה גם בעסק שלך?</h2>
+    <p>בוא נדבר ונבדוק מה אפשרי</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="cta">שיחת היכרות בוואטסאפ</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
-<div class="container">
-<p>&copy; <span id="year"></span> איציק - יועץ AI ואוטומציות עסקיות</p>
-</div>
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> איציק - יועץ AI ואוטומציות עסקיות</p>
+      <div class="footer-links">
+        <a href="about.html">אודות</a>
+        <a href="services.html">שירותים</a>
+        <a href="cases.html">תוצאות</a>
+        <a href="contact.html">צור קשר</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

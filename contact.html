@@ -10,28 +10,86 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar scrolled">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">AI</span>
+      איציק
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">ראשי</a>
+      <a href="about.html">אודות</a>
+      <a href="services.html">שירותים</a>
+      <a href="cases.html">תוצאות</a>
+      <a href="contact.html" class="active">צור קשר</a>
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="nav-cta">שיחת היכרות</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
 <header class="hero">
-<div class="container">
-<h1>צור קשר</h1>
-<p class="subtitle">בוא נדבר על העתיד של העסק שלך</p>
-<a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="cta">שליחת הודעה בוואטסאפ</a>
-</div>
+  <div class="container">
+    <div class="hero-badge">בוא נדבר</div>
+    <h1>צור קשר</h1>
+    <p class="subtitle">בוא נדבר על העתיד של העסק שלך</p>
+  </div>
 </header>
 
-<section class="contact-content">
-<div class="container">
-<p>אני מזמין אותך לשיחת היכרות קצרה כדי להבין מה אפשר להשיג בעזרת AI ואוטומציות. אין צורך בטפסים מסובכים – פשוט שלח הודעה בוואטסאפ ונקבע.</p>
-<a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="cta">שיחת היכרות בוואטסאפ</a>
-</div>
+<!-- Contact Content -->
+<section class="contact-content fade-up" style="padding: 80px 20px;">
+  <div class="container">
+    <p>אני מזמין אותך לשיחת היכרות קצרה כדי להבין מה אפשר להשיג בעזרת AI ואוטומציות. אין צורך בטפסים מסובכים - פשוט שלח הודעה בוואטסאפ ונקבע.</p>
+
+    <div class="contact-methods">
+      <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות" class="contact-card">
+        <div class="contact-icon">&#x1F4AC;</div>
+        <h3>וואטסאפ</h3>
+        <p>הדרך הכי מהירה ליצור קשר</p>
+        <span class="cta" style="font-size: 0.9rem; padding: 10px 24px;">שלח הודעה</span>
+      </a>
+      <a href="tel:+972527237064" class="contact-card">
+        <div class="contact-icon">&#x1F4DE;</div>
+        <h3>טלפון</h3>
+        <p>מעדיף לדבר? התקשר ישירות</p>
+        <span class="cta" style="font-size: 0.9rem; padding: 10px 24px;">התקשר עכשיו</span>
+      </a>
+    </div>
+  </div>
 </section>
 
+<!-- Footer -->
 <footer>
-<div class="container">
-<p>&copy; <span id="year"></span> איציק - יועץ AI ואוטומציות עסקיות</p>
-</div>
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> איציק - יועץ AI ואוטומציות עסקיות</p>
+      <div class="footer-links">
+        <a href="about.html">אודות</a>
+        <a href="services.html">שירותים</a>
+        <a href="cases.html">תוצאות</a>
+        <a href="contact.html">צור קשר</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
