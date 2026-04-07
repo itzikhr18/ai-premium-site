@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { HeroSection } from "./components/HeroSection";
 import { FadeUp, StaggerContainer, StaggerItem } from "./components/AnimatedSection";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const problems = [
   { icon: "📉", title: "חוסר הבנת ROI", desc: "השקעה בכלי AI ללא יעדים עסקיים ברורים ומדידים" },
@@ -41,18 +43,15 @@ export default function Home() {
         splineScene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
       >
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <a
-            href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative">שיחת היכרות בוואטסאפ</span>
+          <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות">
+            <LiquidButton size="xl" className="text-white font-bold text-base">
+              שיחת היכרות בוואטסאפ
+            </LiquidButton>
           </a>
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-full hover:border-accent hover:bg-accent/10 transition-all"
-          >
-            לשירותים שלי
+          <Link href="/services">
+            <LiquidButton variant="outline" size="xl" className="text-white/80 font-bold text-base border-white/20 hover:border-accent">
+              לשירותים שלי
+            </LiquidButton>
           </Link>
         </div>
       </HeroSection>
@@ -176,6 +175,7 @@ export default function Home() {
 
       {/* Stats */}
       <section className="py-24 bg-gradient-to-br from-[#1E1B4B] via-[#312E81] to-[#4C1D95] text-white relative overflow-hidden">
+        <DottedSurface className="!fixed !inset-auto absolute inset-0 opacity-30" />
         <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.1),transparent_70%)]" />
         <div className="w-[90%] max-w-7xl mx-auto relative z-10">
           <FadeUp>
@@ -224,12 +224,10 @@ export default function Home() {
             <p className="text-white/60 text-lg mb-8">
               שיחת אסטרטגיה של 30 דקות ללא התחייבות
             </p>
-            <a
-              href="https://wa.me/972527237064?text=שלום, אשמח לשוחח על AI לעסק שלי"
-              className="group relative inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full text-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative">לתיאום שיחת אסטרטגיה</span>
+            <a href="https://wa.me/972527237064?text=שלום, אשמח לשוחח על AI לעסק שלי">
+              <LiquidButton size="xxl" className="text-white font-bold text-lg">
+                לתיאום שיחת אסטרטגיה
+              </LiquidButton>
             </a>
           </FadeUp>
         </div>
