@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { HeroSection } from "./components/HeroSection";
 import { FadeUp, StaggerContainer, StaggerItem } from "./components/AnimatedSection";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 
 const problems = [
   { icon: "📉", title: "חוסר הבנת ROI", desc: "השקעה בכלי AI ללא יעדים עסקיים ברורים ומדידים" },
@@ -43,15 +42,18 @@ export default function Home() {
         splineScene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
       >
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <a href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות">
-            <LiquidButton size="xl" className="text-white font-bold text-base">
-              שיחת היכרות בוואטסאפ
-            </LiquidButton>
+          <a
+            href="https://wa.me/972527237064?text=שלום, אשמח לשיחת היכרות"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative">שיחת היכרות בוואטסאפ</span>
           </a>
-          <Link href="/services">
-            <LiquidButton variant="outline" size="xl" className="text-white/80 font-bold text-base border-white/20 hover:border-accent">
-              לשירותים שלי
-            </LiquidButton>
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-full hover:border-accent hover:bg-accent/10 transition-all"
+          >
+            לשירותים שלי
           </Link>
         </div>
       </HeroSection>
@@ -175,7 +177,6 @@ export default function Home() {
 
       {/* Stats */}
       <section className="py-24 bg-gradient-to-br from-[#1E1B4B] via-[#312E81] to-[#4C1D95] text-white relative overflow-hidden">
-        <DottedSurface className="!fixed !inset-auto absolute inset-0 opacity-30" />
         <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.1),transparent_70%)]" />
         <div className="w-[90%] max-w-7xl mx-auto relative z-10">
           <FadeUp>
@@ -213,23 +214,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a] text-white text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.2),transparent_70%)]" />
-        <div className="relative z-10 w-[90%] max-w-3xl mx-auto">
-          <FadeUp>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              בואו נתחיל להכניס AI לעסק שלכם
-            </h2>
+      {/* Final CTA with BackgroundPaths */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a]" />
+        <BackgroundPaths title="בואו נתחיל" />
+        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+          <div className="text-center pointer-events-auto">
             <p className="text-white/60 text-lg mb-8">
               שיחת אסטרטגיה של 30 דקות ללא התחייבות
             </p>
-            <a href="https://wa.me/972527237064?text=שלום, אשמח לשוחח על AI לעסק שלי">
-              <LiquidButton size="xxl" className="text-white font-bold text-lg">
-                לתיאום שיחת אסטרטגיה
-              </LiquidButton>
+            <a
+              href="https://wa.me/972527237064?text=שלום, אשמח לשוחח על AI לעסק שלי"
+              className="group relative inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full text-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative">לתיאום שיחת אסטרטגיה</span>
             </a>
-          </FadeUp>
+          </div>
         </div>
       </section>
     </>
