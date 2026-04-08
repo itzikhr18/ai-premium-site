@@ -90,7 +90,7 @@ export function HeroSection({ badge, title, subtitle, children, splineScene }: H
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="flex-1 h-[400px] md:h-[500px] relative hidden md:block"
+              className="flex-1 h-[300px] md:h-[500px] relative"
             >
               <SplineScene
                 scene={splineScene}
