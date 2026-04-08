@@ -2,8 +2,21 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { SplineScene } from "@/components/ui/splite";
+import dynamic from "next/dynamic";
 import { Spotlight } from "@/components/ui/spotlight";
+
+// Load Spline only on client side, skip SSR entirely to prevent crashes
+const SplineScene = dynamic(
+  () => import("@/components/ui/splite").then((mod) => ({ default: mod.SplineScene })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="loader" />
+      </div>
+    ),
+  }
+);
 
 interface HeroProps {
   badge?: string;
@@ -16,13 +29,8 @@ interface HeroProps {
 export function HeroSection({ badge, title, subtitle, children, splineScene }: HeroProps) {
   return (
     <header className="relative bg-black/[0.96] text-white pt-32 pb-20 overflow-hidden min-h-[90vh] flex items-center">
-      {/* Spotlight effect */}
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 
-      {/* Background gradient orbs */}
       <motion.div
         className="absolute -top-1/2 -right-[30%] w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.15),transparent_70%)]"
         animate={{ y: [0, -30, 0], scale: [1, 1.05, 1] }}
@@ -36,7 +44,6 @@ export function HeroSection({ badge, title, subtitle, children, splineScene }: H
 
       <div className="relative z-10 w-[90%] max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Text content - right side in RTL */}
           <div className="flex-1 text-center md:text-right">
             {badge && (
               <motion.span
@@ -78,13 +85,12 @@ export function HeroSection({ badge, title, subtitle, children, splineScene }: H
             )}
           </div>
 
-          {/* 3D Spline scene - left side in RTL */}
           {splineScene && (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="flex-1 h-[400px] md:h-[500px] relative"
+              className="flex-1 h-[400px] md:h-[500px] relative hidden md:block"
             >
               <SplineScene
                 scene={splineScene}
