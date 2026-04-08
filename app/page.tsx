@@ -38,6 +38,7 @@ export default function Home() {
         badge="יועץ AI ואוטומציות עסקיות"
         title="אני עוזר לעסקים להפוך AI לכלי שמכניס כסף וחוסך זמן"
         subtitle="פתרונות AI פרקטיים שמביאים תוצאות אמיתיות לעסקים קטנים ובינוניים"
+        splineScene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
       >
         <div className="flex flex-wrap gap-4 justify-center">
           <a
@@ -214,7 +215,9 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a] text-white text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.2),transparent_70%)]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.2),transparent_70%)] animate-pulse" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.1),transparent_70%)] animate-pulse [animation-delay:1s]" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.1),transparent_70%)] animate-pulse [animation-delay:2s]" />
         <div className="relative z-10 w-[90%] max-w-3xl mx-auto">
           <FadeUp>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
