@@ -215,9 +215,16 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a] text-white text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.2),transparent_70%)] animate-pulse" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.1),transparent_70%)] animate-pulse [animation-delay:1s]" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.1),transparent_70%)] animate-pulse [animation-delay:2s]" />
+        {/* Animated flowing lines */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-[shimmer_3s_ease-in-out_infinite]" />
+          <div className="absolute top-[40%] left-0 w-full h-px bg-gradient-to-r from-transparent via-accent to-transparent animate-[shimmer_4s_ease-in-out_infinite_0.5s]" />
+          <div className="absolute top-[60%] left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-light to-transparent animate-[shimmer_3.5s_ease-in-out_infinite_1s]" />
+          <div className="absolute top-[80%] left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-light to-transparent animate-[shimmer_5s_ease-in-out_infinite_1.5s]" />
+          <div className="absolute top-[30%] left-0 w-[70%] h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-[shimmer_4.5s_ease-in-out_infinite_0.7s]" />
+          <div className="absolute top-[70%] right-0 w-[60%] h-px bg-gradient-to-l from-transparent via-cyan-400 to-transparent animate-[shimmer_3.8s_ease-in-out_infinite_1.2s]" />
+        </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.2),transparent_70%)]" />
         <div className="relative z-10 w-[90%] max-w-3xl mx-auto">
           <FadeUp>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
