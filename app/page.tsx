@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { HeroSection } from "./components/HeroSection";
 import { FadeUp, StaggerContainer, StaggerItem } from "./components/AnimatedSection";
-import { BackgroundPaths } from "@/components/ui/background-paths";
+import { FloatingPaths } from "@/components/ui/background-paths";
 
 const problems = [
   { icon: "📉", title: "חוסר הבנת ROI", desc: "השקעה בכלי AI ללא יעדים עסקיים ברורים ומדידים" },
@@ -215,11 +215,18 @@ export default function Home() {
       </section>
 
       {/* Final CTA with BackgroundPaths */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a]" />
-        <BackgroundPaths title="בואו נתחיל" />
-        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-          <div className="text-center pointer-events-auto">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a]">
+        {/* Animated background lines */}
+        <div className="absolute inset-0 pointer-events-none">
+          <FloatingPaths position={1} />
+          <FloatingPaths position={-1} />
+        </div>
+        {/* CTA Content */}
+        <div className="relative z-10 text-center w-[90%] max-w-3xl mx-auto">
+          <FadeUp>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              בואו נתחיל להכניס AI לעסק שלכם
+            </h2>
             <p className="text-white/60 text-lg mb-8">
               שיחת אסטרטגיה של 30 דקות ללא התחייבות
             </p>
@@ -230,7 +237,7 @@ export default function Home() {
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative">לתיאום שיחת אסטרטגיה</span>
             </a>
-          </div>
+          </FadeUp>
         </div>
       </section>
     </>
