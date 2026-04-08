@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { HeroSection } from "./components/HeroSection";
 import { FadeUp, StaggerContainer, StaggerItem } from "./components/AnimatedSection";
-import { FloatingPaths } from "@/components/ui/background-paths";
 
 const problems = [
   { icon: "📉", title: "חוסר הבנת ROI", desc: "השקעה בכלי AI ללא יעדים עסקיים ברורים ומדידים" },
@@ -214,15 +213,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA with BackgroundPaths */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a]">
-        {/* Animated background lines */}
-        <div className="absolute inset-0 pointer-events-none">
-          <FloatingPaths position={1} />
-          <FloatingPaths position={-1} />
-        </div>
-        {/* CTA Content */}
-        <div className="relative z-10 text-center w-[90%] max-w-3xl mx-auto">
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-br from-[#0F0A2E] via-[#1a1145] to-[#0e2a4a] text-white text-center relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(108,58,237,0.2),transparent_70%)]" />
+        <div className="relative z-10 w-[90%] max-w-3xl mx-auto">
           <FadeUp>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               בואו נתחיל להכניס AI לעסק שלכם
